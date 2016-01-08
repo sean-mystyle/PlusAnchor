@@ -40,7 +40,7 @@
             base.$el.data('plusAnchor', base); // Add a reverse reference to the DOM object
             base.animateScrolling = animateScrolling;
 			
-			var anchorSelector = 'a[href^="#"]';
+			var anchorSelector = options.includeCssIndication ? '.js-plus-anchor' : 'a[href^="#"]';
 			
             // Check for plusanchor disable
             if (options === false) {
@@ -93,7 +93,8 @@
         onInit: null,      // Function: Callback function on plugin initialize
         onSlide: null,     // Function: Callback function that runs just before the page starts animating
         performance: false, // Boolean: Toggles between click and delegate events.
-		animationTarget: null //String|DOM Element: Selector or DOM element to apply animation to. Keep unspecified, if the target element and animation element are the same.
+		animationTarget: null, //String|DOM Element: Selector or DOM element to apply animation to. Keep unspecified, if the target element and animation element are the same.
+		includeCssIndication: false //Boolean: set to true to bind anchors with 'js-plus-anchor' CSS class name only
     };
 
     $.fn.plusAnchor = function(options){
