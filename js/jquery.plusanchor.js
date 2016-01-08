@@ -20,6 +20,8 @@
                 base.animateScrolling($(href));
             } else if ( $name.length ) {
                 base.animateScrolling($name);
+            } else if (base.options.scrollToStart) {
+                base.animateScrolling();
             }
         }
     }
@@ -94,8 +96,9 @@
         onSlide: null,     // Function: Callback function that runs just before the page starts animating
         performance: false, // Boolean: Toggles between click and delegate events.
 		animationTarget: null, //String|DOM Element: Selector or DOM element to apply animation to. Keep unspecified, if the target element and animation element are the same.
-		includeCssIndication: false //Boolean: set to true to bind anchors with 'js-plus-anchor' CSS class name only
-    };
+		includeCssIndication: false, //Boolean: set to true to bind anchors with 'js-plus-anchor' CSS class name only
+		scrollToTop: false //Boolean: Set to true to scroll to to the top of animation target if scroll target is undefined
+	};
 
     $.fn.plusAnchor = function(options){
         return this.each(function(){
