@@ -20,7 +20,7 @@
                 base.animateScrolling($(href));
             } else if ( $name.length ) {
                 base.animateScrolling($name);
-            } else if (base.options.scrollToStart) {
+            } else if (base.options.scrollToTop) {
                 base.animateScrolling();
             }
         }
