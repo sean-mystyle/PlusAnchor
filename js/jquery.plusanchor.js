@@ -1,12 +1,12 @@
 /*
 * PlusAnchor
-* A form component library
-* Version: "1.1.2"
+* A simple jQuery plugin that scrolls to anchor links instead of instantaneously jumping to them.
+* Version: "1.1.2.1"
 * Jamy Golden
 * https://github.com/JamyGolden/PlusAnchor
+* Fork: sean@onegiantmedia.com  |  https://github.com/sean-mystyle/PlusAnchor
 * License: MIT
-*/
-(function($){
+*/(function($){
 
     function scrollToEvent(base) {
         return function(e) {
