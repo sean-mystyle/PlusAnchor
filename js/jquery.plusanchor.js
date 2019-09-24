@@ -34,15 +34,15 @@
         var bodyEl = document.body;
 
         function _constructor() {
-			// If the user selects body, make sure to use 'html, body' for
+	    // If the user selects body, make sure to use 'html, body' for
             // cross browser compatibility reasons
-			base.el = el;
+	    base.el = el;
             base.$el = (el === htmlEl || el === bodyEl) ? $('html, body') : $(el);
             base.$animationTarget = options.animationTarget ? $(options.animationTarget) : base.$el;
             base.$el.data('plusAnchor', base); // Add a reverse reference to the DOM object
             base.animateScrolling = animateScrolling;
 			
-			var anchorSelector = options.includeCssIndication ? '.js-plus-anchor' : 'a[href^="#"]';
+	    var anchorSelector = options.includeCssIndication ? '.js-plus-anchor' : 'a[href^="#"]:not([href="#"])';// only select anchor links that are not # by itself
 			
             // Check for plusanchor disable
             if (options === false) {
